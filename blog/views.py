@@ -10,7 +10,6 @@ def index(request):
     num_alunos = Aluno.objects.all().count()
     context = {
         'num_alunos' : num_alunos,
-
     }
     template_name = 'home.html'
     return render(request, template_name, context) 
@@ -104,7 +103,7 @@ class detalhesProfessor(DetailView):
     model = Professor
     template_name ='detalhesProfessor.html'
 
-def cadastroResponsavel(request):
+def cadastroProfessor(request):
     if request.method == 'POST':
         form = ProfessorForm(request.POST)
         if form.is_valid():

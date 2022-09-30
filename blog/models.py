@@ -5,19 +5,23 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+CHOICES = (
+    ('S','Sim'),
+    ('N','Não')
+)
 
 class Aluno(models.Model):
     cpf = models.CharField(max_length=11)
     rg = models.CharField(max_length=20)
-    imc = models.DecimalField(default=20)
+    imc = models.DecimalField(default=20, decimal_places=2, max_digits=3)
     posicao = models.CharField(max_length=10)
-    possuiProblemaSaude = models.BooleanField(choices="Sim" | "Não")
-    altura = models.DecimalField(default="1,70")
-    massa = models.DecimalField(default=70)
+    possuiProblemaSaude = models.CharField(choices=CHOICES, max_length=2)
+    altura = models.DecimalField(default=1.70, decimal_places=2, max_digits=3)
+    massa = models.DecimalField(default=70, decimal_places=3, max_digits=6)
     nome = models.CharField(max_length=20)
     sobrenome = models.CharField(max_length=35)
     dataNascimento = models.DateField()
-    idade = models.DecimalField()
+    idade = models.CharField(default=10, max_length=2)
     qualProblema = models.CharField(max_length=50)
     observacao = models.TextField(max_length=255)
     foto = models.ImageField()
@@ -54,7 +58,7 @@ class Escola(models.Model):
 
 class Valores(models.Model):
     descricao = models.CharField(max_length=15)
-    preco = models.DecimalField(max_digits=7)
+    preco = models.DecimalField(max_digits=7, decimal_places=2)
 
 class Ficha(models.Model):
     data = models.DateField()
@@ -70,7 +74,7 @@ class Ficha(models.Model):
 class Financeiro(models.Model):
     tipoMovimento = models.CharField(max_length=1)
     dataMovimento = models.DateTimeField()
-    valorPago = models.DecimalField(max_digits=7)
+    valorPago = models.DecimalField(max_digits=7, decimal_places=2)
     situacao = models.CharField(max_length=1)
     ficha_id = models.ForeignKey(Ficha, on_delete=models.CASCADE)
 
