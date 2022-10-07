@@ -37,7 +37,7 @@ def cadastroAluno(request):
 
     return render(request,'cadastrarAluno.html',{'form': form})
 
-def editarAluno(request, pk, template_name='cadastrarAluno.html'):
+def editarAluno(request, pk, template_name='editarAluno.html'):
     alunos = get_object_or_404(Aluno, pk=pk)
     form = AlunoForm(request.POST or None, instance=alunos)
     if form.is_valid():
@@ -45,7 +45,7 @@ def editarAluno(request, pk, template_name='cadastrarAluno.html'):
         return redirect('Aluno')
     return render(request, template_name, {'form':form})
 
-def excluirAluno(request, pk, template_name='confirm_delete.html'):
+def excluirAluno(request, pk, template_name='excluirAluno.html'):
     aluno = get_object_or_404(Aluno, pk=pk)
     if request.method=='POST':
         aluno.delete()
@@ -83,7 +83,7 @@ def editarResponsavel(request, pk, template_name='editarResponsavel.html'):
         return redirect('Responsavel')
     return render(request, template_name, {'form':form})
 
-def excluirResponsavel(request, pk, template_name='confirm_delete.html'):
+def excluirResponsavel(request, pk, template_name='excluirResponsavel.html'):
     responsavel = get_object_or_404(Responsavel, pk=pk)
     if request.method=='POST':
         responsavel.delete()
@@ -121,7 +121,7 @@ def editarProfessor(request, pk, template_name='editarProfessor.html'):
         return redirect('Professor')
     return render(request, template_name, {'form':form})
 
-def excluirProfessor(request, pk, template_name='confirm_delete.html'):
+def excluirProfessor(request, pk, template_name='excluirProfessor.html'):
     professor = get_object_or_404(Professor, pk=pk)
     if request.method=='POST':
         professor.delete()
@@ -166,6 +166,21 @@ def cadastroEscola(request):
 
     return render(request,'cadastrarEscola.html',{'form': form})
 
+def editarEscola(request, pk, template_name='editarEscola.html'):
+    escola = get_object_or_404(Escola, pk=pk)
+    form = FinanceiroForm(request.POST or None, instance=escola)
+    if form.is_valid():
+        form.save()
+        return redirect('Escola')
+    return render(request, template_name, {'form':form})
+
+def excluirEscola(request, pk, template_name='excluirEscola.html'):
+    escola = get_object_or_404(Escola, pk=pk)
+    if request.method=='POST':
+        escola.delete()
+        return redirect('Escola')
+    return render(request, template_name, {'object':escola})
+
 #Valores
 
 class listaValores(ListView):
@@ -184,6 +199,21 @@ def cadastroValores(request):
     form = ValoresForm()
 
     return render(request,'cadastrarValores.html',{'form': form})
+
+def editarValores(request, pk, template_name='editarValores.html'):
+    valores = get_object_or_404(Valores, pk=pk)
+    form = FinanceiroForm(request.POST or None, instance=valores)
+    if form.is_valid():
+        form.save()
+        return redirect('Valores')
+    return render(request, template_name, {'form':form})
+
+def excluirValores(request, pk, template_name='excluirValores.html'):
+    valores = get_object_or_404(Valores, pk=pk)
+    if request.method=='POST':
+        valores.delete()
+        return redirect('Valores')
+    return render(request, template_name, {'object':valores})
 
 #Financeiro
 
@@ -216,7 +246,7 @@ def editarFinanceiro(request, pk, template_name='editarFinanceiro.html'):
         return redirect('Financeiro')
     return render(request, template_name, {'form':form})
 
-def excluirFinanceiro(request, pk, template_name='confirm_delete.html'):
+def excluirFinanceiro(request, pk, template_name='excluirFinanceiro.html'):
     financeiro = get_object_or_404(Financeiro, pk=pk)
     if request.method=='POST':
         financeiro.delete()
@@ -254,7 +284,7 @@ def editarChamada(request, pk, template_name='editarChamada.html'):
         return redirect('Chamada')
     return render(request, template_name, {'form':form})
 
-def excluirChamada(request, pk, template_name='confirm_delete.html'):
+def excluirChamada(request, pk, template_name='excluirChamada.html'):
     chamada = get_object_or_404(Chamada, pk=pk)
     if request.method=='POST':
         chamada.delete()
@@ -292,7 +322,7 @@ def editarFicha(request, pk, template_name='editarFicha.html'):
         return redirect('Ficha')
     return render(request, template_name, {'form':form})
 
-def excluirFicha(request, pk, template_name='confirm_delete.html'):
+def excluirFicha(request, pk, template_name='excluirFicha.html'):
     ficha = get_object_or_404(Ficha, pk=pk)
     if request.method=='POST':
         ficha.delete()

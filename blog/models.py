@@ -3,7 +3,6 @@ from socket import NI_NUMERICHOST
 from tkinter import CASCADE
 from django.conf import settings
 from django.db import models
-from django.utils import timezone
 
 CHOICES = (
     ('S','Sim'),
