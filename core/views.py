@@ -8,8 +8,12 @@ from django.views.generic import ListView, DetailView
 
 def index(request):
     num_alunos = Aluno.objects.all().count()
+    num_professores = Professor.objects.all().count
+    num_escolas = Escola.objects.all().count
     context = {
         'num_alunos' : num_alunos,
+        'num_professores' : num_professores,
+        'num_escolas' : num_escolas
     }
     template_name = 'home.html'
     return render(request, template_name, context) 
