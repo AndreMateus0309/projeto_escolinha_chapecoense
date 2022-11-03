@@ -15,7 +15,7 @@ def index(request):
         'num_professores' : num_professores,
         'num_escolas' : num_escolas
     }
-    template_name = 'home.html'
+    template_name = 'login.html'
     return render(request, template_name, context) 
 
 # Aluno

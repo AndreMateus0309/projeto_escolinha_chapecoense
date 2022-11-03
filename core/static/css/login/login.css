@@ -19,13 +19,13 @@
  
  body {
    
-   background-color: #fff; 
+   background-color: rgb(0, 255, 0); 
    font-family: "Lato", Arial, sans-serif;
    font-size: 16px;
    line-height: 1.8;
    font-weight: normal;
    background: #f8f9fd;
-   color: gray;
+   color: rgb(0, 0, 0);
  }
  
  input[type="checkbox"] {
@@ -178,15 +178,15 @@
  
  .btn {
    cursor: pointer;
-   background-color: #a7aeb6;
+   background-color: #00ff00;
    border-radius: 0.25rem !important;
    -webkit-box-shadow: none !important;
    box-shadow: none !important;
    font-size: 15px; }
    .btn:hover,.btn:active, .btn:focus {
      outline: none; 
-     color:#f5f6f7;
-     background-color: #52575c;
+     color:#ffffff;
+     background-color: #00ff00;
    }
    
  

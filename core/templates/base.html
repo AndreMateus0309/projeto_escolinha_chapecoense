@@ -23,39 +23,42 @@
     
     <!-- Base CSS -->
     <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <title>Sistema de Cadastro Escolinha Chapecoense Canoinhas</title>
   </head>
 
   <body>
     <div class="container-fluid h-100" id="divprincipal">
       <div class="row h-100" id="divsecundaria">
-        <div class="col-lg-2 col-md-2 col-sm-12 p-0 bg-dark" id="divterciaria">
+        <div class="col-lg-2 col-md-2 col-sm-12 p-0 bg-white">
 
           <ul class="nav-menu" id="listanaoordenadaprincipal">
             <hr />
             <li class="nav-item" id="listaordenadaprincipal">          
               <div class="dropdown" id="divinterna">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Alunos
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <h4>Alunos</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cadastrarAluno.html">Cadastrar aluno</a>
-                  <a class="dropdown-item" href="detalhesAluno.html">Ver aluno</a>
-                  <a class="dropdown-item" href="editarAluno.html">Editar aluno</a>
-                  <a class="dropdown-item" href="excluirAluno.html">Excluir aluno</a>
+                  <a class="dropdown-item bg-success text-white" href="cadastrarAluno.html"><h5>Cadastrar aluno</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="detalhesAluno.html"><h5>Ver aluno</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="editarAluno.html"><h5>Editar aluno</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="excluirAluno.html"><h5>Excluir aluno</h5></a>
                 </div>
               </div>
             </li>
             <hr />
 
             <li class="nav-item">          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Responsáveis por aluno
+              <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <h4>Responsáveis por aluno</h4>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="cadastrarResponsavel.html">Cadastrar responsável</a>
-                <a class="dropdown-item" href="detalhesResponsavel.html">Ver responsável</a>
-                <a class="dropdown-item" href="editarResponsavel.html">Editar responsável</a>
-                <a class="dropdown-item" href="excluirResponsavel.html">Excluir responsável por aluno</a>
+                <a class="dropdown-item bg-success text-white" href="cadastrarResponsavel.html"><h5>Cadastrar responsável</h5></a>
+                <a class="dropdown-item bg-success text-white" href="detalhesResponsavel.html"><h5>Ver responsável</h5></a>
+                <a class="dropdown-item bg-success text-white" href="editarResponsavel.html"><h5>Editar responsável</h5></a>
+                <a class="dropdown-item bg-success text-white" href="excluirResponsavel.html"><h5>Excluir responsável por aluno</h5></a>
               </div>
             </div>
             </li>
@@ -63,14 +66,14 @@
 
             <li class="nav-item">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Escolas
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h4>Escolas</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cadastrarEscola.html">Cadastrar escola</a>
-                  <a class="dropdown-item" href="detalhesEscola.html">Ver dados de escola</a>
-                  <a class="dropdown-item" href="editarEscola.html">Editar escola</a>
-                  <a class="dropdown-item" href="excluirEscola.html">Excluir escola</a>
+                  <a class="dropdown-item bg-success text-white" href="cadastrarEscola.html"><h5>Cadastrar escola</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="detalhesEscola.html"><h5>Ver dados de escola</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="editarEscola.html"><h5>Editar escola</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="excluirEscola.html"><h5>Excluir escola</h5></a>
                 </div>
               </div>
             </li>
@@ -78,14 +81,14 @@
 
             <li class="nav-item">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Professores
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <h4>Professores</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cadastrarProfessor.html">Cadastrar professor</a>
-                  <a class="dropdown-item" href="detalhesProfessor.html">Ver dados de professor</a>
-                  <a class="dropdown-item" href="editarProfessor.html">Editar professor</a>
-                  <a class="dropdown-item" href="excluirProfessor.html">Excluir professor</a>
+                  <a class="dropdown-item bg-success text-white" href="cadastrarProfessor.html"><h5>Cadastrar professor</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="detalhesProfessor.html"><h5>Ver dados de professor</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="editarProfessor.html"><h5>Editar professor</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="excluirProfessor.html"><h5>Excluir professor</h5></a>
                 </div>
               </div>
             </li>
@@ -93,13 +96,13 @@
 
             <li class="nav-item">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Financeiro
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <h4>Financeiro</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <div class="dropdown-menu-item">
-                      <a class="dropdown-item" href="cadastrarFinanceiro.html">Abrir caixa</a>
-                    <a class="dropdown-item" href="detalhesFinanceiro.html">Detalhes financeiro e inadimplentes</a>
+                    <a class="dropdown-item bg-success text-white" href="cadastrarFinanceiro.html"><h5>Abrir caixa</h5></a>
+                    <a class="dropdown-item bg-success text-white" href="detalhesFinanceiro.html"><h5>Detalhes financeiro e inadimplentes</h5></a>
                  </div>
                 </div>
               </div>
@@ -108,13 +111,13 @@
 
             <li class="nav-item">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Fichas de matrícula
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <h4>Fichas de matrícula</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cadastrarFicha.html">Nova ficha de matrícula</a>
-                  <a class="dropdown-item" href="detalhesFicha.html">Ver ficha de matrícula</a>
-                  <a class="dropdown-item" href="editarFicha.html">Editar ficha de matrícula</a>
+                  <a class="dropdown-item bg-success text-white" href="cadastrarFicha.html"><h5>Nova ficha de matrícula</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="detalhesFicha.html"><h5>Ver ficha de matrícula</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="editarFicha.html"><h5>Editar ficha de matrícula</h5></a>
                 </div>
               </div>
             </li>
@@ -122,13 +125,13 @@
 
             <li class="nav-item">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Valores de matrícula
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <h4>Valores de matrícula</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cadastrarValores.html">Cadastrar um novo valor</a>
-                  <a class="dropdown-item" href="detalhesValores.html">Ver os atuais valores</a>
-                  <a class="dropdown-item" href="editarValores.html">Alterar um valor</a>
+                  <a class="dropdown-item bg-success text-white" href="cadastrarValores.html"><h5>Cadastrar um novo valor</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="detalhesValores.html"><h5>Ver os atuais valores</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="editarValores.html"><h5>Alterar um valor</h5></a>
                 </div>
               </div>
             </li>
@@ -136,12 +139,12 @@
 
             <li class="nav-item">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Chamadas
+                <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <h4>Chamadas</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="cadastrarChamada.html">Nova chamada</a>
-                  <a class="dropdown-item" href="detalhesChamada.html">Ver chamadas anteriores</a>
+                  <a class="dropdown-item bg-success text-white" href="cadastrarChamada.html"><h5>Nova chamada</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="detalhesChamada.html"><h5>Ver chamadas anteriores</h5></a>
                 </div>
               </div>
             </li>

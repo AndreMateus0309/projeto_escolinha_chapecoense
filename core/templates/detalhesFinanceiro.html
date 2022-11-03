@@ -12,7 +12,7 @@
   <div class="table-title" id="round-top">
       <div class="row">
         <div class="col-sm-7">
-            <h2>Cliente: #{{ cliente.pk }}</h2>
+            <h2>Caixa: #{{ caixa.pk }}</h2>
         <div class="col-md-10 col-xs-10 col-sm-10">
         </div>
         <div class="col-md-1 col-xs-1 col-sm-1"></div>
@@ -20,9 +20,11 @@
      </div>
     </div> 
                 <br>
-                <p>Nome: {{ cliente.nome }}</p>
-                <p>Cpf: {{ cliente.cpf }}</p>
-                <p>Email: {{ cliente.email }}</p>
+                <p>Id caixa: {{ caixa.pk }}</p>
+                <p>Responsável: {{ caixa.responsavel }}</p>
+                <p>Soma recebimentos: {{ caixa.totalRecebido }}</p>
+                <p>Soma saídas: {{ caixa.totalSaidas }}</p>
+                <p>Saldo: {{ caixa.saldo }}</p>
                 <br>
 </div> 
 </div>  

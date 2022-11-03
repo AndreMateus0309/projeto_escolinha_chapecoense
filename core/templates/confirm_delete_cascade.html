@@ -15,14 +15,16 @@
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="alert alert-warning">
-                        Você quer mesmo deletar {{ object }}?
+                        Você quer mesmo deletar {{ object }}? Essa ação irá remover
+                        todos os registros relacionados!
                     </div>
                 </div>
-                {% if user.is_staff %}
+                {% if user.is_authenticated %}
                 <button type="submit" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash">Sim</span>
                 </button>
-                {% endif %} 
+                <a onclick="javascript:history.go(-1)" class="btn btn-dark" role="button">Não</a>
+                {% endif %}
             </form>
         </div>
     </div>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'assets/telaLogin.css' %}" />
+    <title>Tela de Login - Sistema de Cadastro Escolinha da Chapecoense Canoinhas</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <!-- INICIO LOGIN -->
+          <form method="post" action="{% url 'login' %}" class="sign-in-form">
+            {% csrf_token %}
+            <h2 class="title">Digite seu Login</h2>
+            {% if form.errors %}
+    					<div role="alert">
+    						<div class="alert alert-danger">{{ form.non_field_errors }}</div>
+    					</div>
+					  {% endif %}
+            <div class="input-field">
+              <em class="fa fa-user"></em>
+              <input type="text" name="username" autocomplete="username" required="" id="id_username"  placeholder="Usuário" />
+            </div>
+            <div class="input-field">
+              <em class="fa fa-lock"></em>
+              <input type="password" name="password" autocomplete="current-password" required="" id="id_password" placeholder="Senha" />
+            </div>
+            <input type="submit" value="Entrar" class="btn solid" />
+            <input type="hidden" name="next" value="">
+          </form>
+          <!-- FIM LOGIN -->
+    </div>
+    <script src="{% static 'assets/telaLogin.js' %}"></script>
+    
+  </body>
+</html>
