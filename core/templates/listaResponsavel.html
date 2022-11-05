@@ -11,7 +11,7 @@
     <div class="table-title" id="round-top">
         <div class="row mt-3">
           <div class="col-sm-12">
-            {% if user.is_staff %}<a href="{% url 'ClienteCadastro' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Adicionar novo cliente</span></a>{% endif %}  <h2>Clientes</h2> 
+            {% if user.is_staff %}<a href="{% url 'CadastroResponsavel' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Adicionar novo responsável</span></a>{% endif %}  <h2>Responsáveis</h2> 
           </div>
         </div>
     </div>
@@ -21,28 +21,27 @@
             <th class="text-center">ID</th>
             <th class="text-center">Nome</th>
             <th class="text-center">CPF</th>
-            <th class="text-center">Email</th>
-            <th class="text-center">Ações</th>
+            <th class="text-center">Lista de Alunos</th>
           </tr>
         </thead>
         <tbody>
-          {% for cliente in cliente_list %}
+          {% for responsavel in responsavel_list %}
           <tr>
-            <td class="text-center">{{ cliente.pk }}</td>
-            <td class="text-center">{{ cliente.nome }}</td>
-            <td class="text-center">{{ cliente.cpf }}</td>
-            <td class="text-center">{{ cliente.email }}</td>
+            <td class="text-center">{{ responsavel.pk }}</td>
+            <td class="text-center">{{ responsavel.nome }}</td>
+            <td class="text-center">{{ responsavel.cpf }}</td>
+            <td class="text-center">{{ responsavel.listaAlunos }}</td>
             <td class="text-center icons-td">
               {% if user.is_staff %}
-              <a href="{% url 'ClienteDetalhes' cliente.pk %}" class="details">
+              <a href="{% url 'DetalhesResponsavel' responsavel.pk %}" class="details">
                 <span class="material-icons">
                   visibility
                 </span>
               </a>
-              <a href="{% url 'ClienteEditar' cliente.pk %}" class="edit">
+              <a href="{% url 'EditarResponsavel' responsavel.pk %}" class="edit">
                 <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>
               </a>
-              <a href="{% url 'ClienteExcluir' cliente.pk %}" class="delete">
+              <a href="{% url 'ExcluirResponsavel' responsavel.pk %}" class="delete">
                 <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
               </a> 
               {% endif %}               

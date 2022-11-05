@@ -11,7 +11,7 @@
       <div class="table-title" id="round-top">
           <div class="row mt-3">
             <div class="col-sm-12">
-              {% if user.is_staff %}<a href="{% url 'ClienteCadastro' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Adicionar novo cliente</span></a>{% endif %}  <h2>Clientes</h2> 
+              {% if user.is_staff %}<a href="{% url 'CadastroAlunos' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Adicionar novo aluno</span></a>{% endif %}  <h2>Alunos</h2> 
             </div>
           </div>
       </div>
@@ -21,28 +21,25 @@
               <th class="text-center">ID</th>
               <th class="text-center">Nome</th>
               <th class="text-center">CPF</th>
-              <th class="text-center">Email</th>
-              <th class="text-center">Ações</th>
             </tr>
           </thead>
           <tbody>
-            {% for cliente in cliente_list %}
+            {% for aluno in alunos_list %}
             <tr>
-              <td class="text-center">{{ cliente.pk }}</td>
-              <td class="text-center">{{ cliente.nome }}</td>
-              <td class="text-center">{{ cliente.cpf }}</td>
-              <td class="text-center">{{ cliente.email }}</td>
+              <td class="text-center">{{ aluno.pk }}</td>
+              <td class="text-center">{{ aluno.nome }}</td>
+              <td class="text-center">{{ aluno.cpf }}</td>
               <td class="text-center icons-td">
                 {% if user.is_staff %}
-                <a href="{% url 'ClienteDetalhes' cliente.pk %}" class="details">
+                <a href="{% url 'DetalhesAluno' aluno.pk %}" class="details">
                   <span class="material-icons">
                     visibility
                   </span>
                 </a>
-                <a href="{% url 'ClienteEditar' cliente.pk %}" class="edit">
+                <a href="{% url 'EditarAluno' aluno.pk %}" class="edit">
                   <i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i>
                 </a>
-                <a href="{% url 'ClienteExcluir' cliente.pk %}" class="delete">
+                <a href="{% url 'ExcluirAluno' aluno.pk %}" class="delete">
                   <i class="material-icons" data-toggle="tooltip" title="Excluir">&#xE872;</i>
                 </a> 
                 {% endif %}               
