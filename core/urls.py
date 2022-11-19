@@ -9,19 +9,19 @@ urlpatterns = [
 #Aluno
 urlpatterns += [
     path('listaralunos/', views.listaAlunos.as_view(), name='ListaAlunos'),
-    path('alunos/cadastraraluno', views.cadastroAluno, name='CadastroAlunos'),
-    path('aluno/verdetalhesaluno/<int:pk>', views.detalhesAluno.as_view(), name='DetalhesAluno'),
-    path('aluno/editaraluno/<int:pk>', views.editarAluno, name='EditarAluno'),
-    path('aluno/deletaraluno/<int:pk>', views.excluirAluno, name='ExcluirAluno')
+    path('cadastraraluno/', views.cadastroAluno, name='CadastroAlunos'),
+    path('verdetalhesaluno/<int:pk>', views.detalhesAluno.as_view(), name='DetalhesAluno'),
+    path('editaraluno/<int:pk>', views.editarAluno, name='EditarAluno'),
+    path('deletaraluno/<int:pk>', views.excluirAluno, name='ExcluirAluno')
 ]
 
 #Responsavel
 urlpatterns += [
     path('listarresponsavel/', views.listaResponsavel.as_view(), name='ListaResponsavel'),
-    path('responsavel/cadastrarresponsavel', views.cadastroResponsavel, name='CadastroResponsavel'),
-    path('aluno/verdetalhesresponsavel<int:pk>', views.detalhesResponsavel.as_view(), name='DetalhesResponsavel'),
-    path('aluno/editarresponsavel/<int:pk>', views.editarResponsavel, name='EditarResponsavel'),
-    path('aluno/deletarresponsavel/<int:pk>', views.excluirResponsavel, name='ExcluirResponsavel')
+    path('responsavel/cadastrarresponsavel/', views.cadastroResponsavel, name='CadastroResponsavel'),
+    path('responsavel/verdetalhesresponsavel<int:pk>', views.detalhesResponsavel.as_view(), name='DetalhesResponsavel'),
+    path('responsavel/editarresponsavel/<int:pk>', views.editarResponsavel, name='EditarResponsavel'),
+    path('responsavel/deletarresponsavel/<int:pk>', views.excluirResponsavel, name='ExcluirResponsavel')
 ]
 
 #Professor
@@ -55,7 +55,7 @@ urlpatterns += [
 urlpatterns += [
     path('listafinanceiro/', views.listaFinanceiro.as_view(), name='ListaFinanceiro'),
     path('financeiro/cadastrarfinanceiro', views.cadastroFinanceiro, name='CadastroFinanceiro'),
-    path('financeiro/detalhesfinanceiro/<int:pk>', views.detalhesFinanceiro, name='DetalhesFinanceiro'),
+    path('financeiro/detalhesfinanceiro/<int:pk>', views.detalhesFinanceiro.as_view(), name='DetalhesFinanceiro'),
     path('financeiro/editarfinanceiro/<int:pk>', views.editarFinanceiro, name='EditarFinanceiro'),
     path('financeiro/deletarfinanceiro/<int:pk>', views.excluirFinanceiro, name='ExcluirFinanceiro')
 ]

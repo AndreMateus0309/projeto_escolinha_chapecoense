@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
-{% block content %} {% block styles %} 
-{% block style %}
+{% load static %}
 <link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css' %}">
-{% endblock %}
-
-{% block content %}
 <h1 class="title">Home</h1>
 <ul class="breadcrumbs">
   <li><a href="#">Ínicio</a></li>
@@ -17,15 +13,15 @@
       <div>
         <div class="count-item">
           <h3 class="title">Alunos cadastrados</h3>
-          <div class="percentage-holder">
-            <h4 class="" id="alunos-percentage"></h4>
+          <div class="percentage_holder">
+            <h4 class="" id="alunos_percentage"></h4>
             <h4>em relação ao último mês.</h4>
           </div>
 
 
           <div class="info-holder">
             <i class="fas fa-building icon"></i>
-            <div class="counter" id="alunos-counter">
+            <div class="counter" id="alunos_counter">
             </div>
           </div>
         </div>
@@ -38,7 +34,7 @@
       <div class="count-item">
         <h3 class="title">Responsáveis</h3>
         <div class="percentage-holder">
-          <h4 class="" id="responsaveis-percentage"></h4>
+          <h4 class="" id="responsaveis_percentage"></h4>
           <h4>em relação ao último mês.</h4>
         </div>
         <div class="info-holder">
@@ -80,7 +76,6 @@
     </div>
   </div>
 </div>
-{% endblock %}
 
 {% block script %}
   <!-- Chart JS -->
@@ -88,12 +83,12 @@
 
   <!-- Counters -->
   <script>
-    const alunosCounter = document.querySelector("#alunos-counter");
-    const alunosPercentage = document.querySelector("#alunos-percentage")
-    const responsaveisCounter = document.querySelector("#responsaveis-counter");
-    const responsaveisPercentage = document.querySelector("#responsaveis-percentage");
-    const fichasCounter = document.querySelector("#fichas-counter");
-    const fichasPercentage = document.querySelector("#fichas-percentage");
+    const alunosCounter = document.querySelector("#alunos_counter");
+    const alunosPercentage = document.querySelector("#alunos_percentage")
+    const responsaveisCounter = document.querySelector("#responsaveis_counter");
+    const responsaveisPercentage = document.querySelector("#responsaveis_percentage");
+    const fichasCounter = document.querySelector("#fichas_counter");
+    const fichasPercentage = document.querySelector("#fichas_percentage");
 
     const count = (value, end, tag) => {
       tag.innerHTML = value;
@@ -117,13 +112,13 @@
 
       const alunos = {
         counter: alunosCounter,
-        end: "{{ alunos-counter }}",
+        end: "{{ alunos_counter }}",
         last_month: "{{ alunos_lastmonth }}",
       }
 
       const responsaveis = {
         counter: responsaveisCounter,
-        end: "{{ responsaveis-percentage }}",
+        end: "{{ responsaveis_percentage }}",
         last_month: "{{ responsaveis_lastmonth }}",
       }
 
@@ -167,7 +162,7 @@
       labels,
       datasets: [{
           data: ["{{ chart_data.alunos.today }}", "{{ chart_data.alunos.yesterday }}", "{{ chart_data.alunos.twodaysbefore }}", "{{ chart_data.alunos.threedaysbefore }}", "{{ chart_data.alunos.fourdaysbefore }}", "{{ chart_data.alunos.fivedaysbefore }}", "{{ chart_data.alunos.sixdaysbefore }}", "{{ chart_data.alunos.last_week }}"],
-          label: "Alunos cadastradas",
+          label: "Alunos cadastrados",
           fill: true,
           backgroundColor: gradient,
           borderColor: "hsl(0, 0%, 70%)",
@@ -271,4 +266,4 @@
 
     const fichasChart = new Chart(fichasCtx, fichasConfig);
   </script>
-{% endblock %}
+  {% endblock %}

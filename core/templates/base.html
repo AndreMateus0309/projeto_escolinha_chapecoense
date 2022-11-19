@@ -41,10 +41,8 @@
                   <h4>Alunos</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item bg-success text-white" href="cadastrarAluno.html"><h5>Cadastrar aluno</h5></a>
-                  <a class="dropdown-item bg-success text-white" href="detalhesAluno.html"><h5>Ver aluno</h5></a>
-                  <a class="dropdown-item bg-success text-white" href="editarAluno.html"><h5>Editar aluno</h5></a>
-                  <a class="dropdown-item bg-success text-white" href="excluirAluno.html"><h5>Excluir aluno</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="{% url 'CadastroAlunos' %}"><h5>Cadastrar aluno</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="{% url 'ListaAlunos' %}"><h5>Listar Alunos</h5></a>
                 </div>
               </div>
             </li>
@@ -143,12 +141,21 @@
                   <h4>Chamadas</h4>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item bg-success text-white" href="cadastrarChamada.html"><h5>Nova chamada</h5></a>
+                  <a class="dropdown-item bg-success text-white" href="{% url 'CadastroChamada' %}"><h5>Nova chamada</h5></a>
                   <a class="dropdown-item bg-success text-white" href="detalhesChamada.html"><h5>Ver chamadas anteriores</h5></a>
                 </div>
               </div>
             </li>
             <hr />
+          </ul>
+        </div>
+        <div class="col-lg-10 col-md-12 col-sm-12 bg-secondary">
+          <div>
+            {% block content %}
+            {% endblock content %}
+          </div>
+        </div>
+      </div>
 
     <!-- Boostrap JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
