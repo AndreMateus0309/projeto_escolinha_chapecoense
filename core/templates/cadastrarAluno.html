@@ -30,6 +30,11 @@
           <small class="form-text text-muted">{{ field.help_text }}</small>
           {% endif %}
         </div>
+        {% if field.errors %}
+    					<div role="alert">
+    						<div class="alert alert-danger">{{ field.errors }}</div>
+    					</div>
+				{% endif %}
         {% endfor %}
         <p align="right"><button type="submit" class="btn btn-success">Salvar</button></p>
       </form>

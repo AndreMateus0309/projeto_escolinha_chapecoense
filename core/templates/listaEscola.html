@@ -20,7 +20,7 @@
           <tr>
             <th class="text-center">ID</th>
             <th class="text-center">Nome</th>
-            <th class="text-center">Lista de alunos</th>
+            <th class="text-center">Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -28,10 +28,9 @@
           <tr>
             <td class="text-center">{{ escola.pk }}</td>
             <td class="text-center">{{ escola.nome }}</td>
-            <td class="text-center">{{ escola.listaAlunos }}</td>
             <td class="text-center icons-td">
               {% if user.is_staff %}
-              <a href="{% url 'ListaEscola' escola.pk %}" class="list">
+              <a href="#" class="list">
                 <span class="material-icons">
                   visibility
                 </span>

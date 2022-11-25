@@ -32,13 +32,12 @@ class detalhesAluno(DetailView):
     template_name ='detalhesAluno.html'
 
 def cadastroAluno(request):
+    form = AlunoForm()
     if request.method == 'POST':
         form = AlunoForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('Aluno')
-    form = AlunoForm()
-
     return render(request,'cadastrarAluno.html',{'form': form})
 
 def editarAluno(request, pk, template_name='editarAluno.html'):
@@ -165,7 +164,7 @@ def cadastroEscola(request):
         form = EscolaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Escola')
+            return redirect('ListaEscola')
     form = EscolaForm()
 
     return render(request,'cadastrarEscola.html',{'form': form})

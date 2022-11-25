@@ -10,27 +10,19 @@ urlpatterns = [
 urlpatterns += [
     path('listaralunos/', views.listaAlunos.as_view(), name='ListaAlunos'),
     path('cadastraraluno/', views.cadastroAluno, name='CadastroAlunos'),
-    path('verdetalhesaluno/<int:pk>', views.detalhesAluno.as_view(), name='DetalhesAluno'),
-    path('editaraluno/<int:pk>', views.editarAluno, name='EditarAluno'),
-    path('deletaraluno/<int:pk>', views.excluirAluno, name='ExcluirAluno')
+    path('editaraluno/', views.editarAluno, name='EditarAluno')
 ]
 
 #Responsavel
 urlpatterns += [
     path('listarresponsavel/', views.listaResponsavel.as_view(), name='ListaResponsavel'),
-    path('responsavel/cadastrarresponsavel/', views.cadastroResponsavel, name='CadastroResponsavel'),
-    path('responsavel/verdetalhesresponsavel<int:pk>', views.detalhesResponsavel.as_view(), name='DetalhesResponsavel'),
-    path('responsavel/editarresponsavel/<int:pk>', views.editarResponsavel, name='EditarResponsavel'),
-    path('responsavel/deletarresponsavel/<int:pk>', views.excluirResponsavel, name='ExcluirResponsavel')
+    path('responsavel/cadastrarresponsavel/', views.cadastroResponsavel, name='CadastroResponsavel')
 ]
 
 #Professor
 urlpatterns += [
     path('listarprofessor/', views.listaProfessor.as_view(), name='ListaProfessor'),
-    path('professor/cadastrarprofessor', views.cadastroProfessor, name='CadastroProfessor'),
-    path('professor/verdetalhesprofessor<int:pk>', views.detalhesProfessor.as_view(), name='DetalhesProfessor'),
-    path('professor/editarprofessor/<int:pk>', views.editarProfessor, name='EditarProfessor'),
-    path('professor/deletarprofessor/<int:pk>', views.excluirProfessor, name='ExcluirProfessor')
+    path('professor/cadastrarprofessor', views.cadastroProfessor, name='CadastroProfessor')
 ]
 
 #Empresa
@@ -54,26 +46,17 @@ urlpatterns += [
 #Financeiro
 urlpatterns += [
     path('listafinanceiro/', views.listaFinanceiro.as_view(), name='ListaFinanceiro'),
-    path('financeiro/cadastrarfinanceiro', views.cadastroFinanceiro, name='CadastroFinanceiro'),
-    path('financeiro/detalhesfinanceiro/<int:pk>', views.detalhesFinanceiro.as_view(), name='DetalhesFinanceiro'),
-    path('financeiro/editarfinanceiro/<int:pk>', views.editarFinanceiro, name='EditarFinanceiro'),
-    path('financeiro/deletarfinanceiro/<int:pk>', views.excluirFinanceiro, name='ExcluirFinanceiro')
+    path('financeiro/cadastrarfinanceiro', views.cadastroFinanceiro, name='CadastroFinanceiro')
 ]
 
 #Chamada
 urlpatterns += [
     path('listachamada/', views.listaChamada.as_view(), name='ListaChamada'),
-    path('chamada/cadastrarchamada', views.cadastroChamada, name='CadastroChamada'),
-    path('chamada/detalheschamada/<int:pk>', views.detalhesChamada.as_view(), name='DetalhesChamada'),
-    path('chamada/editarchamada/<int:pk>', views.editarChamada, name='EditarChamada'),
-    path('chamada/deletarchamada/<int:pk>', views.excluirChamada, name='ExcluirChamada')
+    path('chamada/cadastrarchamada', views.cadastroChamada, name='CadastroChamada')
 ]
 
 #Ficha
 urlpatterns += [
     path('listaficha/', views.listaFicha.as_view(), name='ListaFicha'),
-    path('ficha/cadastrarficha', views.cadastroFicha, name='CadastroFicha'),
-    path('ficha/detalhesficha/<int:pk>', views.detalhesFicha.as_view(), name='DetalhesFicha'),
-    path('ficha/editarficha/<int:pk>', views.editarFicha, name='EditarFicha'),
-    path('ficha/deletarficha/<int:pk>', views.excluirFicha, name='ExcluirFicha')
+    path('ficha/cadastrarficha', views.cadastroFicha, name='CadastroFicha')
 ]
