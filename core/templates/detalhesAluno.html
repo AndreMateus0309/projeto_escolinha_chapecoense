@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-  {% block content %}
+{% block content %}
   <link rel="stylesheet" href="{% static 'css/listas/listas.css' %}">
-  <link rel="stylesheet" href="{% static 'css/reset/reset.css' %}">
-  <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-{% endblock %}
 
 <div class="col">
 <div class="table-wrapper" id="round">
@@ -20,9 +16,17 @@
      </div>
     </div> 
                 <br>
-                <p>Nome: {{ aluno.nome }}</p>
-                <p>Cpf: {{ aluno.cpf }}</p>
-                <p>Responsável: {{ aluno.responsavel }}</p>
+                <p>Nome: {{ aluno.nome }} {{ aluno.sobrenome }}</p>
+                <p>Data Nascimento: {{ aluno.nome }}</p>
+                <p>CPF: {{ aluno.cpf }}</p>
+                <p>RG: {{ aluno.rg }}</p>
+                <p>Altura: {{ aluno.altura }}</p>
+                <p>Massa: {{ aluno.massa }}</p>
+                <p>IMC: {{ aluno.imc }}</p>
+                <p>Posição: {{ aluno.posicao }}</p>
+                <p>Possuí Problema de Saúde?: {{ aluno.possuiProblemaSaude }}</p>
+                <p>Problema: {{ aluno.qualProblema }}</p>
+                <p>Observação: {{ aluno.observacao }}</p>
                 <br>
 </div> 
 </div>  

@@ -33,127 +33,127 @@
 </head>
 
 <body>
-  <div id='h-100' class="container-fluid">
-    <div class="row h-100">
-      <div class="col-lg-2 col-md-12 col-sm-12 p-0 bg-dark">
-        <div class="logo-container text-center">
-          <a href="{% url 'home'%}"><img src="{% static 'logo.png' %}" alt="Logo"Escolinha<br />
-            Chapecoense Canoinhas
+  <div id='h-100' class="container-fluid bg-success">
+    <div class="row h-100 bg-success">
+      <div class="col-lg-2 col-md-12 col-sm-12 p-0 bg-success">
+        <div class="logo-container text-center bg-success">
+          <a class="text-light" href="{% url 'home'%}"><img src="{% static 'logo.png' %}" alt="Logo"<br />
+            Chapecoense
           </a>
         </div>
 
         <ul class="nav-menu">
           <hr />
           {% if user.is_authenticated %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-address-book"></i></div>Alunos
+              <div><i class="fa fa-address-book text-white"></i></div>Alunos
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroAlunos' %}">Cadastro de Alunos</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroAlunos' %}">Cadastro de Alunos</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaAlunos' %}">Lista de Alunos</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaAlunos' %}">Lista de Alunos</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Responsáveis
+              <div><i class="	fa fa-volume-control-phone text-white"></i></div>Responsáveis
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroResponsavel' %}">Cadastro de Responsáveis</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroResponsavel' %}">Cadastro de Responsáveis</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaResponsavel' %}">Lista de Responsáveis</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaResponsavel' %}">Lista de Responsáveis</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Escolas
+              <div><i class="fa fa-institution text-white"></i></div>Escolas
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroEscola' %}">Cadastro de Escolas</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroEscola' %}">Cadastro de Escolas</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaEscola' %}">Lista de Escolas</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaEscola' %}">Lista de Escolas</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Professores
+              <div><i class="fa fa-mortar-board text-white"></i></div>Professores
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroProfessor' %}">Cadastro de Professores</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroProfessor' %}">Cadastro de Professores</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaProfessor' %}">Lista de Professores</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaProfessor' %}">Lista de Professores</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Financeiro
+              <div><i class="fa fa-dollar text-white"></i></div>Financeiro
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroFinanceiro' %}">Abrir caixa</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroFinanceiro' %}">Abrir caixa</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaFinanceiro' %}">Detalhes financeiro e inadimplentes</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaFinanceiro' %}">Detalhes financeiro e inadimplentes</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Fichas de matrícula
+              <div><i class="fa fa-file-word-o text-white"></i></div>Fichas de matrícula
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroFicha' %}">Nova ficha</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroFicha' %}">Nova ficha</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaFicha' %}">Ver fichas</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaFicha' %}">Ver fichas</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Valores de matrícula
+              <div><i class="fa fa-vcard text-white"></i></div>Valores de matrícula
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroValores' %}">Cadastrar</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroValores' %}">Cadastrar</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaValores' %}">Listar</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaValores' %}">Listar</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-shopping-basket"></i></div>Chamadas
+              <div><i class="	fa fa-volume-up"></i></div>Chamadas
             </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'CadastroChamada' %}">Novo</a>
+            <div class="dropdown-menu text-white">
+              <a class="dropdown-item text-success" href="{% url 'CadastroChamada' %}">Novo</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'ListaChamada' %}">Listar</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaChamada' %}">Listar</a>
             </div>
           </li>
           <hr />
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          <li class="nav-item dropdown bg-success">
+            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-solid fa-user"></i></div>{{ user.username.title }}
+              <div><i class="fa fa-solid fa-user text-white"></i></div>{{ user.username.title }}
             </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
+            <div class="dropdown-menu text-success">
+              <a class="dropdown-item text-success" href="{% url 'logout'%}">Sair</a>
             </div>
           </li>
           <hr />
         </ul>
       </div>
-      <div class="col-lg-10 col-md-12 col-sm-12 bg-secondary">
+      <div class="col-lg-10 col-md-12 col-sm-12 bg-white">
 
         {% block content %}
         {% endblock content %}

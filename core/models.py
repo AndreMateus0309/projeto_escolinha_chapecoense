@@ -9,21 +9,25 @@ CHOICES = (
     ('N','Não')
 )
 
+
 class Aluno(models.Model):
     cpf = models.CharField(max_length=11)
     rg = models.CharField(max_length=20)
-    imc = models.DecimalField(default=20, decimal_places=2, max_digits=3)
     posicao = models.CharField(max_length=10)
     possuiProblemaSaude = models.CharField(choices=CHOICES, max_length=2)
-    altura = models.DecimalField(default=1.70, decimal_places=2, max_digits=3)
-    massa = models.DecimalField(default=70, decimal_places=3, max_digits=6)
+    altura = models.IntegerField()
+    massa = models.IntegerField()
     nome = models.CharField(max_length=20)
     sobrenome = models.CharField(max_length=35)
     dataNascimento = models.DateField()
-    idade = models.CharField(default=10, max_length=2)
-    qualProblema = models.CharField(max_length=50)
-    observacao = models.TextField(max_length=255)
-    foto = models.ImageField()
+    qualProblema = models.CharField(max_length=50, blank=True, null=True)
+    observacao = models.TextField(max_length=255, blank=True, null=True)
+    foto = models.ImageField(blank=True, null=True)
+
+    @property
+    def imc(self):
+        imc = self.massa / (self.altura*self.altura)
+        return imc
 
 class Responsavel(models.Model):
     cpf = models.CharField(max_length=11)

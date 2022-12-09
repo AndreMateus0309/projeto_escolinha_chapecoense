@@ -4,7 +4,6 @@
 body {
   color: #868686 !important;
   background: #000 !important;
-  font-family: 'Poppins', sans-serif !important;
 }
 
 #round {
@@ -13,6 +12,7 @@ body {
 
 #round-top {
   border-radius: 5px 5px 0 0;
+  background-color: #000;
 }
 
 .search {
@@ -51,7 +51,7 @@ input[type="text"] {
 
 .table-title {        
   padding-bottom: 15px;
-  background: rgb(77, 77, 77) !important;
+  background: rgb(0, 255, 0) !important;
   color: #fff;
   padding: 20px 30px;
   margin: -20px -25px 10px;
