@@ -9,11 +9,9 @@ from django.views.generic import ListView, DetailView
 def index(request):
     num_alunos = Aluno.objects.all().count()
     num_professores = Professor.objects.all().count
-    num_escolas = Escola.objects.all().count
     context = {
         'num_alunos' : num_alunos,
-        'num_professores' : num_professores,
-        'num_escolas' : num_escolas
+        'num_professores' : num_professores
     }
     template_name = 'home.html'
     return render(request, template_name, context) 
@@ -130,59 +128,6 @@ def excluirProfessor(request, pk, template_name='confirm_delete.html'):
         professor.delete()
         return redirect('Professor')
     return render(request, template_name, {'object':professor})
-
-# Empresa
-
-class listaEmpresa(ListView):
-    template_name = 'listaEmpresa.html'
-    context_object_name = 'empresa_list'
-
-    def get_queryset(self):
-        return Empresa.objects.all()
-
-def cadastroEmpresa(request):
-    if request.method == 'POST':
-        form = EmpresaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('Empresa')
-    form = EmpresaForm()
-
-    return render(request,'cadastro.html',{'form': form})
-
-# Escola
-
-class listaEscola(ListView):
-    template_name = 'listaEscola.html'
-    context_object_name = 'escola_list'
-
-    def get_queryset(self):
-        return Escola.objects.all()
-
-def cadastroEscola(request):
-    if request.method == 'POST':
-        form = EscolaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('ListaEscola')
-    form = EscolaForm()
-
-    return render(request,'cadastro.html',{'form': form})
-
-def editarEscola(request, pk, template_name='cadastro.html'):
-    escola = get_object_or_404(Escola, pk=pk)
-    form = FinanceiroForm(request.POST or None, instance=escola)
-    if form.is_valid():
-        form.save()
-        return redirect('Escola')
-    return render(request, template_name, {'form':form})
-
-def excluirEscola(request, pk, template_name='confirm_delete.html'):
-    escola = get_object_or_404(Escola, pk=pk)
-    if request.method=='POST':
-        escola.delete()
-        return redirect('Escola')
-    return render(request, template_name, {'object':escola})
 
 #Valores
 

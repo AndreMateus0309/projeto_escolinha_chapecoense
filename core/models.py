@@ -45,20 +45,6 @@ class Professor(models.Model):
     nome = models.CharField(max_length=50)
     observacoes = models.TextField(max_length=255)
 
-class Empresa(models.Model):
-    nome = models.CharField(max_length=50)
-    textoPadrao = models.TextField()
-    telefone = models.CharField(max_length=15)
-    contato1 = models.CharField(max_length=60)
-    contato2 = models.CharField(max_length=60)
-    contato3 = models.CharField(max_length=60)
-    logo = models.ImageField()
-
-class Escola(models.Model):
-    nome = models.CharField(max_length=100)
-    serie = models.CharField(max_length=2)
-    turno = models.CharField(max_length=1)
-
 class Valores(models.Model):
     descricao = models.CharField(max_length=15)
     preco = models.DecimalField(max_digits=7, decimal_places=2)
@@ -69,10 +55,8 @@ class Ficha(models.Model):
     formaPagamento = models.CharField(max_length=10)
     aluno_id = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     responsavel_id = models.ForeignKey(Responsavel, on_delete=models.CASCADE)
-    escola_id = models.ForeignKey(Escola, on_delete=models.CASCADE)
     professor_id = models.ForeignKey(Professor, on_delete=models.CASCADE)
     valores_id = models.ForeignKey(Valores, on_delete=models.CASCADE)
-    empresa_id = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 
 class Financeiro(models.Model):
     tipoMovimento = models.CharField(max_length=1)

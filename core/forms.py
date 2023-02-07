@@ -16,16 +16,6 @@ class ProfessorForm(forms.ModelForm):
         model = Professor
         fields = "__all__"
 
-class EmpresaForm(forms.ModelForm):
-    class Meta:
-        model = Empresa
-        fields = "__all__"
-
-class EscolaForm(forms.ModelForm):
-    class Meta:
-        model = Escola
-        fields = "__all__"
-
 class ValoresForm(forms.ModelForm):
     class Meta:
         model = Valores

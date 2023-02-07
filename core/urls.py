@@ -18,9 +18,10 @@ urlpatterns += [
 #Responsavel
 urlpatterns += [
     path('listarresponsavel/', views.listaResponsavel.as_view(), name='ListaResponsavel'),
-    path('responsavel/cadastrarresponsavel/', views.cadastroResponsavel, name='CadastroResponsavel'),
+    path('cadastrarresponsavel/', views.cadastroResponsavel, name='CadastroResponsavel'),
     path('editarresponsavel/', views.editarResponsavel, name='EditarResponsavel'),
-    path('excluirresponsavel/', views.excluirResponsavel, name='ExcluirResponsavel')
+    path('excluirresponsavel/', views.excluirResponsavel, name='ExcluirResponsavel'),
+    path('detalhesresponsavel/<int:pk>', views.detalhesResponsavel.as_view(), name='DetalhesAluno')
 
 ]
 
@@ -29,23 +30,8 @@ urlpatterns += [
     path('listarprofessor/', views.listaProfessor.as_view(), name='ListaProfessor'),
     path('professor/cadastrarprofessor', views.cadastroProfessor, name='CadastroProfessor'),
     path('editarprofessor/', views.editarProfessor, name='EditarProfessor'),
-    path('excluirprofessor/', views.excluirProfessor, name='ExcluirProfessor')
-]
-
-#Empresa
-urlpatterns += [
-    path('listaempresa/', views.listaEmpresa.as_view(), name='ListaEmpresa'),
-    path('empresa/cadastrarempresa', views.cadastroEmpresa, name='CadastroEmpresa'),
-    path('editaraluno/', views.editarAluno, name='EditarAluno'),
-    path('excluiraluno/', views.excluirAluno, name='ExcluirAluno')
-]
-
-#Escola
-urlpatterns += [
-    path('listaescola/', views.listaEscola.as_view(), name='ListaEscola'),
-    path('escola/cadastrarescola', views.cadastroEscola, name='CadastroEscola'),
-    path('editarescola/', views.editarEscola, name='EditarEscola'),
-    path('excluirescola/', views.excluirEscola, name='ExcluirEscola')
+    path('excluirprofessor/', views.excluirProfessor, name='ExcluirProfessor'),
+    path('detalhesresponsavel/<int:pk>', views.detalhesProfessor.as_view(), name='DetalhesAluno')
 ]
 
 #Valores
@@ -58,18 +44,21 @@ urlpatterns += [
 
 #Financeiro
 urlpatterns += [
-    path('listafinanceiro/', views.listaFinanceiro.as_view(), name='ListaFinanceiro'),
-    path('financeiro/cadastrarfinanceiro', views.cadastroFinanceiro, name='CadastroFinanceiro')
+    path('listacaixas/', views.listaFinanceiro.as_view(), name='ListaFinanceiro'),
+    path('abrircaixa/', views.cadastroFinanceiro, name='CadastroFinanceiro'),
+    path('detalhescaixa/<int:pk>', views.detalhesFinanceiro.as_view(), name='DetalhesFinanceiro')
 ]
 
 #Chamada
 urlpatterns += [
     path('listachamada/', views.listaChamada.as_view(), name='ListaChamada'),
-    path('chamada/cadastrarchamada', views.cadastroChamada, name='CadastroChamada')
+    path('chamada/cadastrarchamada', views.cadastroChamada, name='CadastroChamada'),
+    path('detalheschamada/<int:pk>', views.detalhesChamada.as_view(), name='DetalhesChamada')
 ]
 
 #Ficha
 urlpatterns += [
     path('listaficha/', views.listaFicha.as_view(), name='ListaFicha'),
-    path('ficha/cadastrarficha', views.cadastroFicha, name='CadastroFicha')
+    path('ficha/cadastrarficha', views.cadastroFicha, name='CadastroFicha'),
+    path('detalhesficha/<int:pk>', views.detalhesFicha.as_view(), name='DetalhesFicha')
 ]
