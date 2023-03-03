@@ -5,7 +5,6 @@
   <link rel="stylesheet" href="{% static 'css/reset/reset.css' %}">
   <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-{% endblock %}
 
 <div class="col">
 <div class="table-wrapper" id="round">
@@ -20,11 +19,8 @@
      </div>
     </div> 
                 <br>
-                <p>Id caixa: {{ caixa.pk }}</p>
-                <p>Responsável: {{ caixa.responsavel }}</p>
-                <p>Soma recebimentos: {{ caixa.totalRecebido }}</p>
-                <p>Soma saídas: {{ caixa.totalSaidas }}</p>
-                <p>Saldo: {{ caixa.saldo }}</p>
+                <p>Id recebimento: {{ financeiro.pk }}</p>
+                <p>Situação: {{ financeiro.situacao }}</p>
                 <br>
 </div> 
 </div>  

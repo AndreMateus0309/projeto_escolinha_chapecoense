@@ -21,7 +21,6 @@
             <th class="text-center">ID</th>
             <th class="text-center">Nome</th>
             <th class="text-center">CPF</th>
-            <th class="text-center">Lista de Alunos</th>
           </tr>
         </thead>
         <tbody>
@@ -30,7 +29,6 @@
             <td class="text-center">{{ responsavel.pk }}</td>
             <td class="text-center">{{ responsavel.nome }}</td>
             <td class="text-center">{{ responsavel.cpf }}</td>
-            <td class="text-center">{{ responsavel.listaAlunos }}</td>
             <td class="text-center icons-td">
               {% if user.is_staff %}
               <a href="{% url 'DetalhesResponsavel' responsavel.pk %}" class="details">

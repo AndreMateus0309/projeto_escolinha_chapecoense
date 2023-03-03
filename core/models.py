@@ -3,12 +3,34 @@ from socket import NI_NUMERICHOST
 from tkinter import CASCADE
 from django.conf import settings
 from django.db import models
+from datetime import date
 
 CHOICES = (
     ('S','Sim'),
     ('N','Não')
 )
 
+TIPO_MOVIMENTO = (
+    ('P','Pix'),
+    ('B','Boleto'),
+    ('O','Outro')
+)
+
+SITUACAO_FINANCEIRO = (
+    ('1','OK'),
+    ('2','Parcial'),
+    ('3','Não OK'),
+    ('4', 'Outros')
+)
+
+VALORES_PADRAO = (
+    (50.00, 'R$50,00'),
+    (100.00, 'R$100,00'),
+    (150.00, 'R$150,00'),
+    (200.00, 'R$200,00'),
+    (250.00, 'R$250,00'),
+    (300.00, 'R$300,00'),
+)
 
 class Aluno(models.Model):
     cpf = models.CharField(max_length=11)
@@ -26,8 +48,9 @@ class Aluno(models.Model):
 
     @property
     def imc(self):
-        imc = self.massa / (self.altura*self.altura)
+        imc = ((self.massa) / (self.altura*self.altura)) * 10000
         return imc
+
 
 class Responsavel(models.Model):
     cpf = models.CharField(max_length=11)
@@ -58,11 +81,14 @@ class Ficha(models.Model):
     professor_id = models.ForeignKey(Professor, on_delete=models.CASCADE)
     valores_id = models.ForeignKey(Valores, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return str(self.data) + " - " + str(self.aluno_id.nome)
+
 class Financeiro(models.Model):
-    tipoMovimento = models.CharField(max_length=1)
+    tipoMovimento = models.CharField(choices=TIPO_MOVIMENTO, max_length=1)
     dataMovimento = models.DateTimeField()
-    valorPago = models.DecimalField(max_digits=7, decimal_places=2)
-    situacao = models.CharField(max_length=1)
+    valorPago = models.DecimalField(choices=VALORES_PADRAO, max_digits=7, decimal_places=2)
+    situacao = models.CharField(choices=SITUACAO_FINANCEIRO, max_length=1)
     ficha_id = models.ForeignKey(Ficha, on_delete=models.CASCADE)
 
 class Chamada(models.Model):

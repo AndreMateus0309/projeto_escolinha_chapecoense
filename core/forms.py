@@ -1,6 +1,9 @@
 from django import forms
 from .models import *
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 class AlunoForm(forms.ModelForm):
     class Meta:
         model = Aluno
@@ -35,6 +38,9 @@ class FinanceiroForm(forms.ModelForm):
     class Meta:
         model = Financeiro
         fields = "__all__"
+        widgets = {
+            'dataMovimento': DateInput(),
+        }
 
 class FichaForm(forms.ModelForm):
     class Meta:

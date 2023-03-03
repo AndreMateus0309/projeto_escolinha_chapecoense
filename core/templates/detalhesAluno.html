@@ -4,30 +4,30 @@
   <link rel="stylesheet" href="{% static 'css/listas/listas.css' %}">
 
 <div class="col">
-<div class="table-wrapper" id="round">
-  <div class="table-title" id="round-top">
-      <div class="row">
-        <div class="col-sm-7">
-            <h2>Aluno: #{{ aluno.pk }}</h2>
-        <div class="col-md-10 col-xs-10 col-sm-10">
-        </div>
-        <div class="col-md-1 col-xs-1 col-sm-1"></div>
-        </div>
-     </div>
-    </div> 
-                <br>
-                <p>Nome: {{ aluno.nome }} {{ aluno.sobrenome }}</p>
-                <p>Data Nascimento: {{ aluno.nome }}</p>
-                <p>CPF: {{ aluno.cpf }}</p>
-                <p>RG: {{ aluno.rg }}</p>
-                <p>Altura: {{ aluno.altura }}</p>
-                <p>Massa: {{ aluno.massa }}</p>
-                <p>IMC: {{ aluno.imc }}</p>
-                <p>Posição: {{ aluno.posicao }}</p>
-                <p>Possuí Problema de Saúde?: {{ aluno.possuiProblemaSaude }}</p>
-                <p>Problema: {{ aluno.qualProblema }}</p>
-                <p>Observação: {{ aluno.observacao }}</p>
-                <br>
-</div> 
+  <div class="table-wrapper" id="round">
+    <div class="table-title" id="round-top">
+        <div class="row">
+          <div class="col-sm-7">
+              <h2>Aluno: #{{ aluno.pk }}</h2>
+          <div class="col-md-10 col-xs-10 col-sm-10">
+          </div>
+          <div class="col-md-1 col-xs-1 col-sm-1"></div>
+          </div>
+      </div>
+      </div> 
+                  <br>
+                  <p>Nome: {{ aluno.nome }} {{ aluno.sobrenome }}</p>
+                  <p>Data Nascimento: {{ aluno.dataNascimento }}</p>
+                  <p>CPF: {{ aluno.cpf }}</p>
+                  <p>RG: {{ aluno.rg }}</p>
+                  <p>Altura: {{ aluno.altura }}</p>
+                  <p>Massa: {{ aluno.massa }}</p>
+                  <p>IMC: {{ aluno.imc }}</p>
+                  <p>Posição: {{ aluno.posicao }}</p>
+                  <p>Possuí Problema de Saúde?: {{ aluno.possuiProblemaSaude }}</p>
+                  <p>Problema: {{ aluno.qualProblema }}</p>
+                  <p>Observação: {{ aluno.observacao }}</p>
+                  <br>
+  </div> 
 </div>  
 {% endblock %}

@@ -23,7 +23,12 @@ class listaAlunos(ListView):
     context_object_name = 'alunos_list'
 
     def get_queryset(self):
-        return Aluno.objects.all()    
+        return Aluno.objects.all()
+    
+def inadimplentes(request):
+    alunos = Aluno.objects.all()
+    fichas = Ficha.objects.all()
+    inadimplentes = []
 
 class detalhesAluno(DetailView):
     model = Aluno
@@ -71,7 +76,7 @@ def cadastroResponsavel(request):
         form = ResponsavelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Responsavel')
+            return redirect('ListaResponsavel')
     form = ResponsavelForm()
 
     return render(request,'cadastro.html',{'form': form})
@@ -81,14 +86,14 @@ def editarResponsavel(request, pk, template_name='cadastro.html'):
     form = ResponsavelForm(request.POST or None, instance=responsavel)
     if form.is_valid():
         form.save()
-        return redirect('Responsavel')
+        return redirect('ListaResponsavel')
     return render(request, template_name, {'form':form})
 
 def excluirResponsavel(request, pk, template_name='confirm_delete.html'):
     responsavel = get_object_or_404(Responsavel, pk=pk)
     if request.method=='POST':
         responsavel.delete()
-        return redirect('Responsavel')
+        return redirect('ListaResponsavel')
     return render(request, template_name, {'object':responsavel})
 
 # Professor
@@ -109,7 +114,7 @@ def cadastroProfessor(request):
         form = ProfessorForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Professor')
+            return redirect('ListaProfessor')
     form = ProfessorForm()
 
     return render(request,'cadastro.html',{'form': form})
@@ -119,14 +124,14 @@ def editarProfessor(request, pk, template_name='cadastro.html'):
     form = ProfessorForm(request.POST or None, instance=professor)
     if form.is_valid():
         form.save()
-        return redirect('Professor')
+        return redirect('ListaProfessor')
     return render(request, template_name, {'form':form})
 
 def excluirProfessor(request, pk, template_name='confirm_delete.html'):
     professor = get_object_or_404(Professor, pk=pk)
     if request.method=='POST':
         professor.delete()
-        return redirect('Professor')
+        return redirect('ListaProfessor')
     return render(request, template_name, {'object':professor})
 
 #Valores
@@ -138,12 +143,16 @@ class listaValores(ListView):
     def get_queryset(self):
         return Valores.objects.all()
 
+class detalhesValores(DetailView):
+    model = Valores
+    template_name ='detalhesValores.html'
+
 def cadastroValores(request):
     if request.method == 'POST':
         form = ValoresForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Valores')
+            return redirect('ListaValores')
     form = ValoresForm()
 
     return render(request,'cadastro.html',{'form': form})
@@ -153,14 +162,14 @@ def editarValores(request, pk, template_name='cadastro.html'):
     form = FinanceiroForm(request.POST or None, instance=valores)
     if form.is_valid():
         form.save()
-        return redirect('Valores')
+        return redirect('ListaValores')
     return render(request, template_name, {'form':form})
 
 def excluirValores(request, pk, template_name='confirm_delete.html'):
     valores = get_object_or_404(Valores, pk=pk)
     if request.method=='POST':
         valores.delete()
-        return redirect('Valores')
+        return redirect('ListaValores')
     return render(request, template_name, {'object':valores})
 
 #Financeiro
@@ -181,7 +190,7 @@ def cadastroFinanceiro(request):
         form = FinanceiroForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Financeiro')
+            return redirect('ListaFinanceiro')
     form = FinanceiroForm()
 
     return render(request,'cadastro.html',{'form': form})
@@ -191,14 +200,14 @@ def editarFinanceiro(request, pk, template_name='cadastro.html'):
     form = FinanceiroForm(request.POST or None, instance=financeiro)
     if form.is_valid():
         form.save()
-        return redirect('Financeiro')
+        return redirect('ListaFinanceiro')
     return render(request, template_name, {'form':form})
 
 def excluirFinanceiro(request, pk, template_name='confirm_delete.html'):
     financeiro = get_object_or_404(Financeiro, pk=pk)
     if request.method=='POST':
         financeiro.delete()
-        return redirect('Financeiro')
+        return redirect('ListaFinanceiro')
     return render(request, template_name, {'object':financeiro})
 
 #Chamada
@@ -219,7 +228,7 @@ def cadastroChamada(request):
         form = ChamadaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Chamada')
+            return redirect('ListaChamada')
     form = ChamadaForm()
 
     return render(request,'cadastro.html',{'form': form})
@@ -229,14 +238,14 @@ def editarChamada(request, pk, template_name='cadastro.html'):
     form = ChamadaForm(request.POST or None, instance=chamada)
     if form.is_valid():
         form.save()
-        return redirect('Chamada')
+        return redirect('ListaChamada')
     return render(request, template_name, {'form':form})
 
 def excluirChamada(request, pk, template_name='confirm_delete.html'):
     chamada = get_object_or_404(Chamada, pk=pk)
     if request.method=='POST':
         chamada.delete()
-        return redirect('Chamada')
+        return redirect('ListaChamada')
     return render(request, template_name, {'object':chamada})
 
 #Ficha
@@ -257,7 +266,7 @@ def cadastroFicha(request):
         form = FichaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Ficha')
+            return redirect('ListaFicha')
     form = FichaForm()
 
     return render(request,'cadastro.html',{'form': form})
@@ -267,7 +276,7 @@ def editarFicha(request, pk, template_name='cadastro.html'):
     form = FichaForm(request.POST or None, instance=ficha)
     if form.is_valid():
         form.save()
-        return redirect('Ficha')
+        return redirect('ListaFicha')
     return render(request, template_name, {'form':form})
 
 def excluirFicha(request, pk, template_name='confirm_delete.html'):

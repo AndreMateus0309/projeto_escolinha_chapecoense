@@ -19,18 +19,16 @@
       <thead>
           <tr>
             <th class="text-center">ID</th>
-            <th class="text-center">Valor 01</th>
-            <th class="text-center">Valor 02</th>
-            <th class="text-center">Valor 03</th>
+            <th class="text-center">Valor descrição</th>
+            <th class="text-center">Preço</th>
           </tr>
         </thead>
         <tbody>
           {% for valor in valores_list %}
           <tr>
             <td class="text-center">{{ valor.pk }}</td>
-            <td class="text-center">{{ valor.valor01 }}</td>
-            <td class="text-center">{{ valor.valor02 }}</td>
-            <td class="text-center">{{ valor.valor03 }}</td>
+            <td class="text-center">{{ valor.descricao }} </td>
+            <td class="text-center">{{ valor.preco }}</td>
           </tr>
           {% endfor %}
         </tbody>

@@ -19,9 +19,9 @@ urlpatterns += [
 urlpatterns += [
     path('listarresponsavel/', views.listaResponsavel.as_view(), name='ListaResponsavel'),
     path('cadastrarresponsavel/', views.cadastroResponsavel, name='CadastroResponsavel'),
-    path('editarresponsavel/', views.editarResponsavel, name='EditarResponsavel'),
-    path('excluirresponsavel/', views.excluirResponsavel, name='ExcluirResponsavel'),
-    path('detalhesresponsavel/<int:pk>', views.detalhesResponsavel.as_view(), name='DetalhesAluno')
+    path('editarresponsavel/<int:pk>', views.editarResponsavel, name='EditarResponsavel'),
+    path('excluirresponsavel/<int:pk>', views.excluirResponsavel, name='ExcluirResponsavel'),
+    path('detalhesresponsavel/<int:pk>', views.detalhesResponsavel.as_view(), name='DetalhesResponsavel')
 
 ]
 
@@ -29,24 +29,27 @@ urlpatterns += [
 urlpatterns += [
     path('listarprofessor/', views.listaProfessor.as_view(), name='ListaProfessor'),
     path('professor/cadastrarprofessor', views.cadastroProfessor, name='CadastroProfessor'),
-    path('editarprofessor/', views.editarProfessor, name='EditarProfessor'),
-    path('excluirprofessor/', views.excluirProfessor, name='ExcluirProfessor'),
-    path('detalhesresponsavel/<int:pk>', views.detalhesProfessor.as_view(), name='DetalhesAluno')
+    path('editarprofessor/<int:pk>', views.editarProfessor, name='EditarProfessor'),
+    path('excluirprofessor/<int:pk>', views.excluirProfessor, name='ExcluirProfessor'),
+    path('detalhesprofessor/<int:pk>', views.detalhesProfessor.as_view(), name='DetalhesProfessor')
 ]
 
 #Valores
 urlpatterns += [
     path('listavalores/', views.listaValores.as_view(), name='ListaValores'),
     path('valores/cadastrarvalores', views.cadastroValores, name='CadastroValores'),
-    path('editarvalores/', views.editarValores, name='EditarValores'),
-    path('excluirvalores/', views.excluirValores, name='ExcluirValores')
+    path('editarvalores/<int:pk>', views.editarValores, name='EditarValores'),
+    path('excluirvalores/<int:pk>', views.excluirValores, name='ExcluirValores'),
+    path('detalhesvalores/<int:pk>', views.detalhesValores.as_view(), name='DetalhesValores')
 ]
 
 #Financeiro
 urlpatterns += [
     path('listacaixas/', views.listaFinanceiro.as_view(), name='ListaFinanceiro'),
     path('abrircaixa/', views.cadastroFinanceiro, name='CadastroFinanceiro'),
-    path('detalhescaixa/<int:pk>', views.detalhesFinanceiro.as_view(), name='DetalhesFinanceiro')
+    path('detalhescaixa/<int:pk>', views.detalhesFinanceiro.as_view(), name='DetalhesFinanceiro'),
+    path('editarfinanceiro/<int:pk>', views.detalhesFinanceiro.as_view(), name='EditarFinanceiro'),
+    path('excluirfinanceiro/<int:pk>', views.excluirFinanceiro, name='ExcluirFinanceiro')
 ]
 
 #Chamada
