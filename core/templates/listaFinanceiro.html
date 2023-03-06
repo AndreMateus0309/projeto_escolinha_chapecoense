@@ -11,7 +11,7 @@
     <div class="table-title" id="round-top">
         <div class="row mt-3">
           <div class="col-sm-12">
-            {% if user.is_staff %}<a href="{% url 'CadastroFinanceiro' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Adicionar novo caixa</span></a>{% endif %}  <h2>Caixas anteriores</h2> 
+            {% if user.is_staff %}<a href="{% url 'CadastroFinanceiro' %}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Adicionar novo Recebimento</span></a>{% endif %}  <h2>Recebimentos anteriores</h2> 
           </div>
         </div>
     </div>
@@ -19,17 +19,21 @@
       <thead>
           <tr>
             <th class="text-center">ID</th>
-            <th class="text-center">
+            <th class="text-center">Tipo Movimento</th>
+            <th class="text-center">Data Recebimento</th>
+            <th class="text-center">Valor pago</th>
+            <th class="text-center">Situação</th>
+            <th class="text-center">Ações</th>
           </tr>
         </thead>
         <tbody>
           {% for financeiro in financeiro_list %}
           <tr>
             <td class="text-center">{{ financeiro.pk }}</td>
-            <td class="text-center">{{ financeiro.data }}</td>
-            <td class="text-center">{{ financeiro.entradas }}</td>
-            <td class="text-center">{{ financeiro.saidas }}</td>
-            <td class="text-center">{{ financeiro.saldo }}</td>
+            <td class="text-center">{{ financeiro.tipoMovimento }}</td>
+            <td class="text-center">{{ financeiro.dataMovimento }}</td>
+            <td class="text-center">{{ financeiro.valorPago }}</td>
+            <td class="text-center">{{ financeiro.situacao }}</td>
             <td class="text-center icons-td">
               {% if user.is_staff %}
               <a href="{% url 'DetalhesFinanceiro' financeiro.pk %}" class="details">

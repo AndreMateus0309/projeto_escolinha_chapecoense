@@ -12,15 +12,13 @@ CHOICES = (
 
 TIPO_MOVIMENTO = (
     ('P','Pix'),
-    ('B','Boleto'),
+    ('D','Dinheiro'),
     ('O','Outro')
 )
 
 SITUACAO_FINANCEIRO = (
-    ('1','OK'),
-    ('2','Parcial'),
-    ('3','Não OK'),
-    ('4', 'Outros')
+    ('0','OK'),
+    ('1','Inadimplente')
 )
 
 VALORES_PADRAO = (
@@ -82,11 +80,11 @@ class Ficha(models.Model):
     valores_id = models.ForeignKey(Valores, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.data) + " - " + str(self.aluno_id.nome)
+        return str(self.data) + " - " + str(self.aluno_id.nome) + " - " + str(self.aluno_id.cpf)
 
 class Financeiro(models.Model):
     tipoMovimento = models.CharField(choices=TIPO_MOVIMENTO, max_length=1)
-    dataMovimento = models.DateTimeField()
+    dataMovimento = models.DateField()
     valorPago = models.DecimalField(choices=VALORES_PADRAO, max_digits=7, decimal_places=2)
     situacao = models.CharField(choices=SITUACAO_FINANCEIRO, max_length=1)
     ficha_id = models.ForeignKey(Ficha, on_delete=models.CASCADE)
