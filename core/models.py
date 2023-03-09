@@ -4,6 +4,29 @@ from tkinter import CASCADE
 from django.conf import settings
 from django.db import models
 from datetime import date
+from django_cpf_cnpj.fields import CNPJField, CPFField
+
+COMO_SOUBE_CHOICES = (
+    ('I', 'Internet'),
+    ('J', 'Jornal'),
+    ('R', 'Rádio'),
+    ('O', 'Outros')
+)
+
+POSICAO_CHOICES = (
+    ('GO', 'Goleiro'),
+    ('LD', 'Lateral Direito'),
+    ('LE', 'Lateral Esquerdo'),
+    ('ZC', 'Zagueiro'),
+    ('VOL', 'Volante'),
+    ('MLG', 'Meia de Ligação'),
+    ('MLD', 'Meia de Ligação Direita'),
+    ('MLE', 'Meia de Ligação Esquerda'),
+    ('MAT', 'Meia Atacante'),
+    ('PTE', 'Ponta Esquerda'),
+    ('PTD', 'Ponta Direita'),
+    ('CA', 'Centroavante'),
+)
 
 CHOICES = (
     ('S','Sim'),
@@ -31,9 +54,9 @@ VALORES_PADRAO = (
 )
 
 class Aluno(models.Model):
-    cpf = models.CharField(max_length=11)
+    cpf = CPFField(masked=False)
     rg = models.CharField(max_length=20)
-    posicao = models.CharField(max_length=10)
+    posicao = models.CharField(choices = POSICAO_CHOICES, max_length=10)
     possuiProblemaSaude = models.CharField(choices=CHOICES, max_length=2)
     altura = models.IntegerField()
     massa = models.IntegerField()
@@ -51,7 +74,7 @@ class Aluno(models.Model):
 
 
 class Responsavel(models.Model):
-    cpf = models.CharField(max_length=11)
+    cpf = CPFField(masked=False)
     rg = models.CharField(max_length=20)
     nome = models.CharField(max_length=50)
     telefone = models.CharField(max_length=15)
@@ -62,7 +85,7 @@ class Responsavel(models.Model):
     bairro = models.CharField(max_length=30)
 
 class Professor(models.Model):
-    cpf = models.CharField(max_length=11)
+    cpf = CPFField(masked=False)
     nome = models.CharField(max_length=50)
     observacoes = models.TextField(max_length=255)
 
@@ -72,7 +95,7 @@ class Valores(models.Model):
 
 class Ficha(models.Model):
     data = models.DateField()
-    comoSoube = models.CharField(max_length=15)
+    comoSoube = models.CharField(choices = COMO_SOUBE_CHOICES, max_length=15)
     formaPagamento = models.CharField(max_length=10)
     aluno_id = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     responsavel_id = models.ForeignKey(Responsavel, on_delete=models.CASCADE)
