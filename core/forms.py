@@ -9,8 +9,7 @@ class AlunoForm(forms.ModelForm):
         model = Aluno
         fields = "__all__"
         widgets = {
-            'dataNascimento': DateInput(),
-            'cpf': CPFField()
+            'dataNascimento': DateInput()
         }
 
 class ResponsavelForm(forms.ModelForm):
@@ -60,5 +59,5 @@ class FichaForm(forms.ModelForm):
         model = Ficha
         fields = "__all__"
         widgets = {
-            'data': DateInput(),
+            'data': DateInput()
         }

@@ -54,7 +54,7 @@ VALORES_PADRAO = (
 )
 
 class Aluno(models.Model):
-    cpf = CPFField(masked=False)
+    cpf = CPFField(masked=True)
     rg = models.CharField(max_length=20)
     posicao = models.CharField(choices = POSICAO_CHOICES, max_length=10)
     possuiProblemaSaude = models.CharField(choices=CHOICES, max_length=2)
@@ -67,6 +67,9 @@ class Aluno(models.Model):
     observacao = models.TextField(max_length=255, blank=True, null=True)
     foto = models.ImageField(blank=True, null=True)
 
+    def __str__(self):
+        return str(self.nome) + " - " + str(self.cpf) + " - " + str(self.dataNascimento)
+    
     @property
     def imc(self):
         imc = ((self.massa) / (self.altura*self.altura)) * 10000
@@ -74,7 +77,7 @@ class Aluno(models.Model):
 
 
 class Responsavel(models.Model):
-    cpf = CPFField(masked=False)
+    cpf = CPFField(masked=True)
     rg = models.CharField(max_length=20)
     nome = models.CharField(max_length=50)
     telefone = models.CharField(max_length=15)
@@ -84,15 +87,24 @@ class Responsavel(models.Model):
     numero = models.CharField(max_length=5)
     bairro = models.CharField(max_length=30)
 
+    def __str__(self):
+        return str(self.nome) + " - " + str(self.cpf) + " - " + str(self.dataNascimento)
+
 class Professor(models.Model):
-    cpf = CPFField(masked=False)
+    cpf = CPFField(masked=True)
     nome = models.CharField(max_length=50)
     observacoes = models.TextField(max_length=255)
+
+    def __str__(self):
+        return str(self.nome) + " - " + str(self.cpf) + " - " + str(self.observacoes)
 
 class Valores(models.Model):
     descricao = models.CharField(max_length=15)
     preco = models.DecimalField(max_digits=7, decimal_places=2)
 
+    def __str__(self):
+        return str(self.descricao) + " - " + str(self.preco)
+    
 class Ficha(models.Model):
     data = models.DateField()
     comoSoube = models.CharField(choices = COMO_SOUBE_CHOICES, max_length=15)

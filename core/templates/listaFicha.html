@@ -22,15 +22,16 @@
             <th class="text-center">Nome do aluno</th>
             <th class="text-center">CPF do aluno</th>
             <th class="text-center">CPF do responsável</th>
+            <th class="text-center">Ações</th>
           </tr>
         </thead>
         <tbody>
           {% for ficha in fichas_list %}
           <tr>
             <td class="text-center">{{ ficha.pk }}</td>
-            <td class="text-center">{{ ficha.aluno.nome }}</td>
-            <td class="text-center">{{ ficha.aluno.cpf }}</td>
-            <td class="text-center">{{ ficha.responsavel.cpf }}</td>
+            <td class="text-center">{{ ficha.aluno_id.nome }}</td>
+            <td class="text-center">{{ ficha.aluno_id.cpf }}</td>
+            <td class="text-center">{{ ficha.responsavel_id.cpf }}</td>
             <td class="text-center icons-td">
               {% if user.is_staff %}
               <a href="{% url 'DetalhesFicha' ficha.pk %}" class="details">

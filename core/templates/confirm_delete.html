@@ -12,12 +12,15 @@
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="alert alert-warning">
-                        Você quer mesmo deletar {{ object }}?
+                        Você quer mesmo deletar o item {{ object.nome }}?
                     </div>
                 </div>
                 {% if user.is_staff %}
                 <button type="submit" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash">Sim</span>
+                </button>
+                <button type="button" class="btn btn-success">
+                    <span class="glyphicon glyphicon-trash">Não</span>
                 </button>
                 {% endif %} 
             </form>

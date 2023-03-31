@@ -21,14 +21,15 @@
             <th class="text-center">ID</th>
             <th class="text-center">Professor</th>
             <th class="text-center">Lista de Alunos</th>
+            <th class="text-center">Ações</th>
           </tr>
         </thead>
         <tbody>
           {% for chamada in chamada_list %}
           <tr>
             <td class="text-center">{{ chamada.pk }}</td>
-            <td class="text-center">{{ chamada.professor.nome }}</td>
-            <td class="text-center">{{ chamada.ListaAlunos.nome }}</td>
+            <td class="text-center">{{ chamada.ficha_id.professor_id.nome }}</td>
+           <td class="text-center"> <a href="">Lista de Alunos</a></td>
             <td class="text-center icons-td">
               {% if user.is_staff %}
               <a href="{% url 'DetalhesChamada' chamada.pk %}" class="details">

@@ -84,12 +84,13 @@
           <li class="nav-item dropdown bg-success">
             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-dollar text-white"></i></div>Financeiro
+              <div><i class="fa fa-vcard text-white"></i></div>Valores de matrícula
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item text-success" href="{% url 'CadastroFinanceiro' %}">Novo Recebimento</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroValores' %}">Cadastrar</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-success" href="{% url 'ListaFinanceiro' %}">Detalhes financeiro e inadimplentes</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaValores' %}">Listar</a>
+              <div class="dropdown-divider"></div>
             </div>
           </li>
           <hr />
@@ -108,25 +109,12 @@
           <li class="nav-item dropdown bg-success">
             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
               aria-expanded="false">
-              <div><i class="fa fa-vcard text-white"></i></div>Valores de matrícula
+              <div><i class="fa fa-dollar text-white"></i></div>Financeiro
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item text-success" href="{% url 'CadastroValores' %}">Cadastrar</a>
+              <a class="dropdown-item text-success" href="{% url 'CadastroFinanceiro' %}">Novo Recebimento</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-success" href="{% url 'ListaValores' %}">Listar</a>
-              <div class="dropdown-divider"></div>
-            </div>
-          </li>
-          <hr />
-          <li class="nav-item dropdown bg-success">
-            <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">
-              <div><i class="	fa fa-volume-up"></i></div>Chamadas
-            </a>
-            <div class="dropdown-menu text-white">
-              <a class="dropdown-item text-success" href="{% url 'CadastroChamada' %}">Novo</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-success" href="{% url 'ListaChamada' %}">Listar</a>
+              <a class="dropdown-item text-success" href="{% url 'ListaFinanceiro' %}">Detalhes financeiro e inadimplentes</a>
             </div>
           </li>
           <hr />

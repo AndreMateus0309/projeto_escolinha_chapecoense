@@ -252,7 +252,7 @@ def excluirChamada(request, pk, template_name='confirm_delete.html'):
 
 class listaFicha(ListView):
     template_name = 'listaFicha.html'
-    context_object_name = 'ficha_list'
+    context_object_name = 'fichas_list'
 
     def get_queryset(self):
         return Ficha.objects.all()
@@ -283,5 +283,5 @@ def excluirFicha(request, pk, template_name='confirm_delete.html'):
     ficha = get_object_or_404(Ficha, pk=pk)
     if request.method=='POST':
         ficha.delete()
-        return redirect('Ficha')
+        return redirect('ListaFicha')
     return render(request, template_name, {'object':ficha})
