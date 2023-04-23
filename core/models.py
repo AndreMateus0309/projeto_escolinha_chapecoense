@@ -1,5 +1,4 @@
 import cProfile
-from socket import NI_NUMERICHOST
 from django.conf import settings
 from django.db import models
 from datetime import date
