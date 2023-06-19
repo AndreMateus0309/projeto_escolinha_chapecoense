@@ -19,6 +19,8 @@ from django.urls import path
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import AlunoViewSet
+from rest_framework import routers
 
 urlpatterns = [
     path('', RedirectView.as_view(url='login/')),
@@ -26,8 +28,14 @@ urlpatterns = [
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+router = routers.DefaultRouter()
+router.register('alunos', AlunoViewSet)
+
+
 urlpatterns += [
+    path('', include(router.urls)),
     path('', include('core.urls')),
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]

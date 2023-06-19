@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
 from django.views.generic import ListView, DetailView
+from rest_framework import viewsets
+from .serializers import AlunoSerializer
 
 # Generico
 
@@ -285,3 +287,7 @@ def excluirFicha(request, pk, template_name='confirm_delete.html'):
         ficha.delete()
         return redirect('ListaFicha')
     return render(request, template_name, {'object':ficha})
+
+class AlunoViewSet(viewsets.ModelViewSet):
+    queryset = Aluno.objects.all()
+    serializer_class = AlunoSerializer
